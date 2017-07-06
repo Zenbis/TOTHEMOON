@@ -11,7 +11,7 @@ var NodeBittrexApi = function() {
   'use strict';
 
   var request = require('request'),
-    hmac_sha512 = require('./hmac-sha512.js'),
+    hmac_sha512 = require('hmac'),
     JSONStream = require('JSONStream'),
     es = require('event-stream'),
     jsonic = require('jsonic'),
@@ -32,11 +32,11 @@ var NodeBittrexApi = function() {
     baseUrl: 'https://bittrex.com/api/v1.1',
     websockets_baseurl: 'wss://socket.bittrex.com/signalr',
     websockets_hubs: ['CoreHub'],
-    apikey: 'APIKEY',
-    apisecret: 'APISECRET',
-    verbose: false,
-    cleartext: false,
-    stream: false,
+    apikey: '201058416ba7442287413d19caf0de77',
+    apisecret: '3622c90e7abb4f49a0f1048a656043fa',
+    verbose: true,
+    cleartext: true,
+    stream: true,
   };
 
   var getNonce = function() {
@@ -175,7 +175,7 @@ var NodeBittrexApi = function() {
       } catch (e) {
         ((opts.verbose) ? console.error(e) : '');
       }
-      return false; 
+      return false;
     }
   };
 

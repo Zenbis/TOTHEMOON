@@ -17,15 +17,15 @@
         <div class="section columns">
             <div class="column is-8 is-offset-2">
                 <h2 class="title has-text-centered">
-                      {{ result.leagueCaption }}
+                      {{ result.market }}
                   </h2>
 
                   <table class="table is-bordered is-striped is-narrow">
                     <thead>
                         <tr>
                             <th width="10px">#</th>
-                              <th>Team</th>
-                              <th>P</th>
+                              <th>Quantity</th>
+                              <th>Rate</th>
                               <th>W</th>
                               <th>D</th>
                               <th>L</th>
@@ -36,12 +36,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {{#each result.standing}}
+                    {{#each result.buy}}
                         <tr>
-                            <td>{{ position }}</td>
+                            <td>{{ quantity }}</td>
                               <td>
-                                  <a href="teams/{{teamID _links.team.href }}">
-                                      {{ teamName }}
+                                  <a href="buy/{{buy _links.team.href }}">
+                                      {{ quantity }}
                                   </a>
                               </td>
                               <td>
@@ -78,4 +78,3 @@
 
 </body>
 </html>
- 
